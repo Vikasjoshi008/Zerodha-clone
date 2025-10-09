@@ -1,0 +1,6 @@
+node_modules
+**/node_modules/
+.env
+**/.env
+Desktop.ini
+1334102230981811620313546581666188642642.ico"backend/.env" 

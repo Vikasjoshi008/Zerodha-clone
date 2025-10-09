@@ -1,0 +1,110 @@
+.watchlist-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.watchlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-result-item:hover {
+    background: #f5f5f5;
+}
+
+.watchlist-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.watchlist-table th,
+.watchlist-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.watchlist-table th {
+    font-weight: 600;
+    color: #666;
+}
+
+.watchlist-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.positive {
+    color: #16a34a;
+}
+
+.negative {
+    color: #dc2626;
+}
+
+/* Real-time update animation */
+@keyframes highlight {
+    from {
+        background-color: rgba(37, 99, 235, 0.1);
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+.highlight {
+    animation: highlight 1s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .watchlist-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .watchlist-table {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "zerodha-clone",
+  "version": "1.0.0",
+  "description": "Zerodha trading platform clone",
+  "scripts": {
+    "install-all": "concurrently \"cd frontend && npm install\" \"cd dashboard && npm install\" \"cd backend && npm install\"",
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-dashboard\" \"npm run start-backend\"",
+    "start-frontend": "cd frontend && npm start",
+    "start-dashboard": "cd dashboard && npm start",
+    "start-backend": "cd backend && npm start",
+    "build": "concurrently \"cd frontend && npm run build\" \"cd dashboard && npm run build\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
