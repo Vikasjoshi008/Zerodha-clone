@@ -1,10 +1,11 @@
 import React from "react";
+import {username} from '../../../frontend/src/landing_page/Navbar';
 
 const Summary = () => {
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi, <b></b>{username}</h6>
         <hr className="divider" />
       </div>
 

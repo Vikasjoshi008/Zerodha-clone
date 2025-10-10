@@ -78,7 +78,7 @@ function Navbar() {
                         {isLoggedIn ? (
                             <>
                                 <span className="nav-link me-3">
-                                    Welcome, <strong style={{ color: '#2563eb' }}>{username}</strong>
+                                    Welcome, <b style={{ color: '#2563eb' }}>{username}</b>
                                 </span>
                                 <a
                                     href="http://localhost:3001/"
