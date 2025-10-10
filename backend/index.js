@@ -11,7 +11,7 @@ const authRoute = require("./Routes/AuthRoute");
 const stockRoutes = require("./Routes/stockRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = 3002;
 
 // Core middleware
 app.use(bodyParser.json());

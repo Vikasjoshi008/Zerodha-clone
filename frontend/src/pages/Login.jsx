@@ -29,16 +29,17 @@ const Login = () => {
       draggable: true,
       progress: undefined,
     });
-  const handleSuccess = (msg) =>
-    toast.success(msg, {
-      position: "bottom-left",
-      autoClose: 2000, // Will auto close after 2 seconds
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+
+  // const handleSuccess = (msg) =>
+  //   toast.success(msg, {
+  //     position: "bottom-left",
+  //     autoClose: 2000, // Will auto close after 2 seconds
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,7 +51,7 @@ const Login = () => {
 
       console.log("Sending login request with data:", inputValue);
       const response = await axios.post(
-        "http://localhost:3002/login",process.env.REACT_APP_API_URL,
+        "http://localhost:3002/login",
         {
           ...inputValue,
         },
