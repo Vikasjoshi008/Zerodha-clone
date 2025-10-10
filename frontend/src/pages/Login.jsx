@@ -50,7 +50,7 @@ const Login = () => {
 
       console.log("Sending login request with data:", inputValue);
       const response = await axios.post(
-        "http://localhost:3002/login",
+        "http://localhost:3002/login",process.env.REACT_APP_API_URL,
         {
           ...inputValue,
         },
