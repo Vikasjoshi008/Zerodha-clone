@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
 const stockRoutes = require("./Routes/stockRoutes");
 
+
 const app = express();
 const PORT = 3002;
 
@@ -18,7 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-  origin: ["http://localhost:3000", 
+  origin: [
+    "http://localhost:3000/login", 
     "http://localhost:3001",
     process.env.FRONTEND_URL,
     process.env.DASHBOARD_URL
