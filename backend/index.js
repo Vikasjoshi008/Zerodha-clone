@@ -20,13 +20,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
   origin: [
-    "http://localhost:3000/login", 
+     "http://localhost:3000",
     "http://localhost:3001",
     process.env.FRONTEND_URL,
     process.env.DASHBOARD_URL
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
+  optionsSuccessStatus: 204,
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
@@ -121,10 +122,7 @@ app.use("/api/stocks", stockRoutes);
 
 // Connect to Mongo and start server
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);
@@ -152,5 +150,3 @@ app.use((err, req, res, next) => {
     error: process.env.NODE_ENV === 'development' ? err.message : undefined
   });
 });
-
-// Removed duplicate connection/listener
