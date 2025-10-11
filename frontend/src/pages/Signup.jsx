@@ -11,6 +11,7 @@ const Signup = () => {
     username: "",
   });
   const { email, password, username } = inputValue;
+  const API_URL_BASE=process.env.REACT_APP_API_BASE_URL;
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -32,7 +33,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",process.env.REACT_APP_API_URL,
+        `${API_URL_BASE}/signup`,
         {
           ...inputValue,
         },
