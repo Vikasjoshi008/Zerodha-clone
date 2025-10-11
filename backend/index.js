@@ -22,6 +22,7 @@ app.use(cookieParser());
 const corsOptions={
   origin: [
     "http://localhost:3000",
+    "http://localhost:3001",
     "https://zerodha-clone-frontend-6gdc.onrender.com",
     "https://zerodha-clone-dashboard-wcph.onrender.com",
   ],
