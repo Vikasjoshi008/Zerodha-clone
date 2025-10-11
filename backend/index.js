@@ -18,7 +18,8 @@ const PORT = 3002;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({
+
+const corsOptions={
   origin: [
      "http://localhost:3000",
     "http://localhost:3001",
@@ -29,7 +30,8 @@ app.use(cors({
   credentials: true,
   optionsSuccessStatus: 204,
   allowedHeaders: ['Content-Type', 'Authorization']
-}));
+}
+app.use(cors(corsOptions));
 
 app.get('/allHoldings', async(req, res) => {
     let allHoldings=await HoldingsModel.find({});
